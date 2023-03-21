@@ -24,8 +24,26 @@ def main():
 
     j = 1
     running = True
+    right = True
+    jump = False
+
+    status = 'stand'
     while running:
         keys = pygame.key.get_pressed()
+
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = pygame.mouse.get_pos()
+                mouse_on_start_game = start_game_button.mouse_in_button(mouse_pos)
+                if mouse_on_start_game: #loop
+                        j=2
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_UP:
+                jump = True
+
+
         if j == 1:
             SCREEN.blit(background1, (0, 0))
             SCREEN.blit(start_game, (START_GAME_X, START_GAME_Y))
@@ -34,17 +52,14 @@ def main():
             #                      20, 20)
             # pygame.draw.rect(screen, (0, 0, 0), square)
 
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                mouse_pos = pygame.mouse.get_pos()
-                mouse_on_start_game = start_game_button.mouse_in_button(mouse_pos)
-                if mouse_on_start_game:
-                    print(mouse_pos)
-                    j += 1
-                    SCREEN.blit(background, (0, 0))
-                    icy.icy_display('stand')
+        elif j == 2:
+            SCREEN.blit(background, (0, 0))
+            icy.icy_display()
+            icy.icy_move(keys)
+            icy.icy_jumping(jump)
+            jump = False
+
+
         pygame.display.flip()
         #if keys[pygame.K_UP]:
         #    icy.icy_jump()

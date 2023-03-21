@@ -15,3 +15,7 @@ PLAYER1_IMAGES = ['C:\Hackathon_nitzanim\Candy_Tower\image\icy_tower_stand.png',
 ICY_WIDTH = 64.5
 ICY_LENGTH = 96.5
 
+icy_x = 500
+icy_y = 600
+
+WALK_SPEED = 1.3

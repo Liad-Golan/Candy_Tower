@@ -23,7 +23,8 @@ class Player():
         self.y_start = self.icy_y
 
     def check_screen_stones(self, screen_stones):
-        if .coli
+        pass
+        #if .coli
         
 
     def icy_display(self):

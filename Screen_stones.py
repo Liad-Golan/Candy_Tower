@@ -8,7 +8,7 @@ class screen_stones():
     def __init__(self):
         self.min_length = 60
         self.max_length = 700
-        rec
+
 
         self.stair = pygame.image.load("image/stair.png")
 

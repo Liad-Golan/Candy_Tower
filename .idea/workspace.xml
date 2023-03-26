@@ -7,9 +7,14 @@
     <list default="true" id="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constans.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/background.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/background1.jpeg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/קבצי עזר/המקורי.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/קבצי עזר/המקורי.xlsx" afterDir="false" />
+    </list>
+    <list id="991cc9be-77d2-42fd-86c7-383bdf5bdade" name="Changes by orraz" comment="">
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +31,33 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/main.py">
+      <ranges>
+        <range start1="5" end1="5" start2="5" end2="7" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
+        <range start1="13" end1="15" start2="15" end2="17" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
+        <range start1="19" end1="21" start2="21" end2="23" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
+        <range start1="28" end1="28" start2="30" end2="31" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
+        <range start1="45" end1="45" start2="48" end2="49" changelist="991cc9be-77d2-42fd-86c7-383bdf5bdade" />
+        <range start1="47" end1="48" start2="51" end2="52" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
+        <range start1="49" end1="50" start2="53" end2="53" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
+        <range start1="55" end1="57" start2="58" end2="61" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
+        <range start1="58" end1="58" start2="62" end2="63" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
+        <range start1="71" end1="71" start2="76" end2="80" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/player.py">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="3" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
+        <range start1="8" end1="8" start2="9" end2="10" changelist="991cc9be-77d2-42fd-86c7-383bdf5bdade" />
+        <range start1="22" end1="23" start2="24" end2="27" changelist="991cc9be-77d2-42fd-86c7-383bdf5bdade" />
+        <range start1="55" end1="56" start2="59" end2="60" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
+        <range start1="57" end1="57" start2="61" end2="62" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
+        <range start1="62" end1="62" start2="67" end2="68" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
+        <range start1="64" end1="64" start2="70" end2="72" changelist="991cc9be-77d2-42fd-86c7-383bdf5bdade" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectId" id="2MumanKlvbdVgUHONMOGms3up27" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -36,6 +68,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">

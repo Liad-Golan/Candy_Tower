@@ -1,11 +1,13 @@
 import pygame
 from Constans import *
+clock = pygame.time.Clock
 
 
 class Player():
     def __init__(self, player_photos):
         self.icy_stand = pygame.image.load(player_photos[0])
         self.icy_stand_scale = pygame.transform.scale(self.icy_stand, (64.5, 96.5))
+        rect = self.icy_stand.get_rect()
 
         self.icy_walk = pygame.image.load(player_photos[1])
         self.icy_walk_scale = pygame.transform.scale(self.icy_walk, (64.5, 96.5))
@@ -20,7 +22,9 @@ class Player():
         self.is_jumping = False
         self.y_start = self.icy_y
 
-
+    def check_screen_stones(self, screen_stones):
+        if .coli
+        
 
     def icy_display(self):
         if self.status == 'stand':
@@ -53,12 +57,16 @@ class Player():
             self.y_start = self.icy_y
 
         if self.is_jumping:
-            if self.y_start-100 < self.icy_y:
+            if self.y_start-300 < self.icy_y:
                 self.icy_y -= 3
+                pygame.time.delay(2)
             else:
                 self.is_jumping = False
         elif not self.is_jumping:
             if self.icy_y + ICY_LENGTH < SCREEN_LENGTH_Y:
                 self.icy_y += 3
+                pygame.time.delay(2)
             else:
                 self.status = 'stand'
+
+

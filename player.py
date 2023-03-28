@@ -1,13 +1,14 @@
 import pygame
 from Constans import *
 clock = pygame.time.Clock
+from screen_stones import *
 
 
 class Player():
     def __init__(self, player_photos):
         self.icy_stand = pygame.image.load(player_photos[0])
         self.icy_stand_scale = pygame.transform.scale(self.icy_stand, (64.5, 96.5))
-        rect = self.icy_stand.get_rect()
+        self.rect_icy = self.icy_stand.get_rect()
 
         self.icy_walk = pygame.image.load(player_photos[1])
         self.icy_walk_scale = pygame.transform.scale(self.icy_walk, (64.5, 96.5))
@@ -16,15 +17,21 @@ class Player():
         self.icy_jump_scale = pygame.transform.scale(self.icy_jump, (64.5, 96.5))
 
         self.icy_x = icy_x
-        self.icy_y = 600
+        self.icy_y = icy_y - ICY_LENGTH
 
         self.status = 'stand'
         self.is_jumping = False
         self.y_start = self.icy_y
 
     def check_screen_stones(self, screen_stones):
-        pass
-        #if .coli
+
+
+        if self.rect_icy.colliderect(self, Screen_stones.rect_stair):
+            self.is_jumping = False
+            Player.icy_jumping(False)
+
+
+
         
 
     def icy_display(self):
@@ -37,6 +44,7 @@ class Player():
         elif self.status == 'left':
             walk_left = pygame.transform.flip(self.icy_walk_scale, True, False)
             SCREEN.blit(walk_left, (self.icy_x, self.icy_y+4))
+
 
     def icy_move(self, keys):
         if keys[pygame.K_RIGHT]:
@@ -71,3 +79,5 @@ class Player():
                 self.status = 'stand'
 
 
+#(self.icy_y + ICY_LENGTH < 650) and (screen_stones.stair_x< self.icy_x < screen_stones.stair_x+screen_stones.stair_length)
+#self.icy_y + ICY_LENGTH < SCREEN_LENGTH_Y or self.icy_y + ICY_LENGTH < 650

@@ -18,7 +18,7 @@ ICY_WIDTH = 64.5
 ICY_LENGTH = 96.5
 
 icy_x = 500
-icy_y = 600
+icy_y = SCREEN_LENGTH_Y
 
 WALK_SPEED = 1.3
 

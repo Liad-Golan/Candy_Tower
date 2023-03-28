@@ -3,7 +3,7 @@ from Constans import *
 from player import *
 from my_buttons import *
 from Button import *
-from Screen_stones import *
+from screen_stones import *
 
 
 
@@ -28,7 +28,7 @@ def main():
     running = True
     right = True
     jump = False
-    need_random = 0
+    need_random = [0, 0]
 
     status = 'stand'
     while running:
@@ -57,7 +57,7 @@ def main():
 
         elif j == 2:
             SCREEN.blit(game_background, (0, 0))
-            stair = screen_stones()
+            stair = Screen_stones()
             need_random = stair.display_stair(need_random)
             icy.icy_move(keys)
             icy.icy_display()

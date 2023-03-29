@@ -40,7 +40,6 @@ class Player:
             if self.rect_icy.colliderect(screen_stones_rect):
                 pygame.draw.rect(SCREEN, (0, 255, 0), self.rect_icy, 3)
                 pygame.draw.rect(SCREEN, (0, 255, 0), screen_stones_rect, 3)
-                print('button:', self.rect_icy.bottom, 'to:', screen_stones_rect.top + 5)
                 if self.rect_icy.bottom <= screen_stones_rect.top + 5:
                     self.stair_top = screen_stones_rect.top
                     self.icy_on_stair = True

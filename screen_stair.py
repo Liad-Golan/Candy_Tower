@@ -13,6 +13,7 @@ class ScreenStair():
         self.stair_y = stair_y #זמנית
 
         self.stair_id = stair_id
+        self.speed_down = SPEED_DOWN
 
     def display_stair(self, stair_info):
         if stair_info[0] == 0:
@@ -35,7 +36,7 @@ class ScreenStair():
 
     def stair_movment(self):
         if self.stair_y < SCREEN_LENGTH_Y:
-            self.stair_y += SPEED_DOWN
+            self.stair_y += self.speed_down
         else:
             self.stair_y = -140
             self.stair_id += 4

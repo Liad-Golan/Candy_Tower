@@ -8,6 +8,7 @@ from Button import *
 from screen_stair import *
 
 
+
 def display_points(icy):
     font = pygame.font.SysFont('snap itc', 60)
     img = font.render(('Points: ' + str(icy.points)), True, (255, 0, 150))
@@ -29,7 +30,7 @@ def main():
     start_game = pygame.image.load("image/start_game.png")
     start_game = pygame.transform.scale(start_game, (START_GAME_WIDTH, START_GAME_HEIGHT))
 
-    start_background = pygame.image.load("image/start_background.jpeg")
+    start_background = pygame.image.load("image/start_background2.png")
     start_background = pygame.transform.scale(start_background, (SCREEN_WIDTH_X, SCREEN_LENGTH_Y))
 
     end_background = pygame.image.load("image/end_background.jpg")

@@ -29,6 +29,7 @@ class Player:
         self.set_stairs = set()
         self.points = 0
         self.is_fail = False
+        self.speed_down = SPEED_DOWN
 
     @property
     def is_icy_max_y(self):
@@ -52,6 +53,9 @@ class Player:
                     self.icy_on_stair = screen_stair.stair_id
                     self.set_stairs.add(screen_stair.stair_id)
                     self.points = len(self.set_stairs) * 10
+                    # if self.points % 100 == 0:
+                    #     self.speed_down += 0.1
+                    #     screen_stair.speed_down += 0.1
 
                     # TODO: to remove
                     # pygame.draw.rect(SCREEN, (255, 0, 0), self.rect_icy, 3)

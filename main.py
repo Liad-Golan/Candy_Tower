@@ -28,6 +28,9 @@ def main():
     start_background = pygame.image.load("image/start_background.jpeg")
     start_background = pygame.transform.scale(start_background, (SCREEN_WIDTH_X, SCREEN_LENGTH_Y))
 
+    end_background = pygame.image.load("image/end_background.jpg")
+    end_background = pygame.transform.scale(end_background, (SCREEN_WIDTH_X, SCREEN_LENGTH_Y))
+
     icy = Player(PLAYER1_IMAGES)
 
     screenNumber = 1
@@ -40,9 +43,9 @@ def main():
     need_random4 = [0, 0]
 
     stair1 = ScreenStair(1, 600)
-    stair2 = ScreenStair(2, 450)  # גבהים 200 ו500 לא עבודים
-    stair3 = ScreenStair(3, 300)  # אההההההה....!!!!!
-    stair4 = ScreenStair(4, 150)
+    stair2 = ScreenStair(2, 394)  # גבהים 200 ו500 לא עבודים
+    stair3 = ScreenStair(3, 188)  # אההההההה....!!!!!
+    stair4 = ScreenStair(4, -18)
     status = 'stand'
 
     while running:
@@ -91,6 +94,12 @@ def main():
             elif stair4.stair_movment():
                 need_random4 = [0, 0]
 
+            display_points(icy)
+            if icy.is_fail:
+                screenNumber = 3
+
+        if screenNumber == 3:
+            SCREEN.blit(end_background, (0, 0))
             display_points(icy)
 
         pygame.display.flip()

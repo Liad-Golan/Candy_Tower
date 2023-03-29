@@ -28,6 +28,7 @@ class Player:
 
         self.set_stairs = set()
         self.points = 0
+        self.is_fail = False
 
     @property
     def is_icy_max_y(self):
@@ -112,10 +113,13 @@ class Player:
             self.icy_down(0.1)
             if self.is_icy_on_floor:
                 self.icy_on_stair = None
+                self.is_fail = True
         else:
             if not self.is_icy_on_floor:
                 self.icy_down(3)
                 pygame.time.delay(2)
             else:
                 self.status = 'stand'
+                if self.points > 0:
+                    self.is_fail = True
 

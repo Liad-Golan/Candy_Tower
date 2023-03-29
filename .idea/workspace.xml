@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" name="Changes" comment="game is fully working">
+    <list default="true" id="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" name="Changes" comment="add points">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/buttons.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screen_stairs.py" beforeDir="false" afterPath="$PROJECT_DIR$/screen_stair.py" afterDir="false" />
     </list>
     <list id="991cc9be-77d2-42fd-86c7-383bdf5bdade" name="Changes by orraz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +104,13 @@
       <option name="presentableId" value="LOCAL‎00005" />
       <updated>1680102502789</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL‎00006" summary="add points">
+      <created>1680114749906</created>
+      <option name="number" value="LOCAL‎00006" />
+      <option name="presentableId" value="LOCAL‎00006" />
+      <updated>1680114749906</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -128,14 +131,15 @@
     <MESSAGE value="stop on stair and on the floor" />
     <MESSAGE value="stop on stair and on the floor without print" />
     <MESSAGE value="game is fully working" />
-    <option name="LAST_COMMIT_MESSAGE" value="game is fully working" />
+    <MESSAGE value="add points" />
+    <option name="LAST_COMMIT_MESSAGE" value="add points" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/player.py</url>
-          <line>49</line>
+          <line>50</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
@@ -144,7 +148,7 @@
       <configuration name="PythonConfigurationType">
         <watch expression="self.collision" />
       </configuration>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/player.py" line="48">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/player.py" line="49">
         <watch expression="self.collision" />
       </inline-watch>
     </watches-manager>

@@ -9,9 +9,8 @@ from screen_stair import *
 
 
 def display_points(icy):
-    font = pygame.font.SysFont(None, 60)
-    print(icy.points)
-    img = font.render(('Points: ' + str(icy.points)), True, (0, 0, 0))
+    font = pygame.font.SysFont('snap itc', 60)
+    img = font.render(('Points: ' + str(icy.points)), True, (255,0,150))
     SCREEN.blit(img, (20, 20))
 
 def main():

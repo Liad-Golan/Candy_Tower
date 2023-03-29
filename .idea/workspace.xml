@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" name="Changes" comment="now its working">
       <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
     </list>
     <list id="991cc9be-77d2-42fd-86c7-383bdf5bdade" name="Changes by orraz" comment="" />
@@ -73,6 +72,13 @@
       <option name="presentableId" value="Default" />
       <updated>1678625907965</updated>
     </task>
+    <task id="LOCAL‎00001" summary="now its working">
+      <created>1680096255773</created>
+      <option name="number" value="LOCAL‎00001" />
+      <option name="presentableId" value="LOCAL‎00001" />
+      <updated>1680096255773</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -87,12 +93,16 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="now its working" />
+    <option name="LAST_COMMIT_MESSAGE" value="now its working" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/player.py</url>
-          <line>34</line>
+          <line>33</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
@@ -101,7 +111,7 @@
       <configuration name="PythonConfigurationType">
         <watch expression="self.collision" />
       </configuration>
-      <inline-watch fileUrl="file://$PROJECT_DIR$/player.py" line="34">
+      <inline-watch fileUrl="file://$PROJECT_DIR$/player.py" line="33">
         <watch expression="self.collision" />
       </inline-watch>
     </watches-manager>

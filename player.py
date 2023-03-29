@@ -1,9 +1,9 @@
-import pygame
 from Constans import *
+
 clock = pygame.time.Clock
 
 
-class Player():
+class Player:
     def __init__(self, player_photos):
         self.icy_stand = pygame.image.load(player_photos[0])
         self.icy_stand_scale = pygame.transform.scale(self.icy_stand, (64.5, 96.5))
@@ -25,39 +25,26 @@ class Player():
         self.collision = False
 
         self.icy_on_stair = False
-
+        self.stair_top = 0
 
     def check_screen_stones(self, screen_stones):
         screen_stones_rect = screen_stones.rect_stair
-        if self.is_jumping == False: # max height, going down
+        if not self.is_jumping:  # max height, going down
             if self.rect_icy.colliderect(screen_stones_rect):
-                if self.rect_icy.bottom <= screen_stones_rect.top+5:
+                if self.rect_icy.bottom <= screen_stones_rect.top + 5:
                     self.collision = True
                     self.stair_top = screen_stones_rect.top
                     self.icy_on_stair = True
                     # TODO: to remove
                     pygame.draw.rect(SCREEN, (255, 0, 0), self.rect_icy, 3)
                     pygame.draw.rect(SCREEN, (255, 0, 0), screen_stones_rect, 3)
-                    ##print("icy", self.rect_icy.bottom)
-                    ##print("stairs", screen_stones_rect.top)
                     print('collision', self.collision)
                     print('icy x:', icy_x, ICY_WIDTH + icy_x)
-                    print('stair x:', screen_stones_rect[0], screen_stones_rect[0]+screen_stones_rect[2])
-                    #self.icy_y = screen_stones_rect.top
-                    #self.icy_x = 50
+                    print('stair x:', screen_stones_rect[0], screen_stones_rect[0] + screen_stones_rect[2])
             else:
                 print('collision', self.collision)
-                print('icy x:', icy_x, ICY_WIDTH+icy_x)
+                print('icy x:', icy_x, ICY_WIDTH + icy_x)
                 self.collision = False
-
-
-        """
-                    self.is_jumping = False
-                    Player.icy_jumping(False)
-                    """
-
-
-        
 
     def icy_display(self):
         if self.status == 'stand':
@@ -65,15 +52,14 @@ class Player():
         elif self.status == 'jump':
             SCREEN.blit(self.icy_jump_scale, (self.icy_x, self.icy_y))
         elif self.status == 'right':
-            SCREEN.blit(self.icy_walk_scale, (self.icy_x, self.icy_y+4))
+            SCREEN.blit(self.icy_walk_scale, (self.icy_x, self.icy_y + 4))
         elif self.status == 'left':
             walk_left = pygame.transform.flip(self.icy_walk_scale, True, False)
-            SCREEN.blit(walk_left, (self.icy_x, self.icy_y+4))
+            SCREEN.blit(walk_left, (self.icy_x, self.icy_y + 4))
 
         self.rect_icy[0] = self.icy_x
         self.rect_icy[1] = self.icy_y
         pygame.draw.rect(SCREEN, (0, 0, 0), self.rect_icy, 3)
-
 
     def icy_move(self, keys):
         if keys[pygame.K_RIGHT]:
@@ -83,7 +69,7 @@ class Player():
             self.status = 'left'
             self.icy_x -= WALK_SPEED
 
-        if self.icy_x > SCREEN_WIDTH_X-ICY_WIDTH:
+        if self.icy_x > SCREEN_WIDTH_X - ICY_WIDTH:
             self.icy_x = (SCREEN_WIDTH_X - ICY_WIDTH)
         elif self.icy_x < 0:
             self.icy_x = 0
@@ -97,34 +83,21 @@ class Player():
             self.y_start = self.icy_y
 
         if self.is_jumping:
-            if self.y_start-300 < self.icy_y:
+            if self.y_start - 300 < self.icy_y:
                 self.icy_y -= 3
                 pygame.time.delay(2)
             else:
                 self.is_jumping = False
-                ## print("im down")
-                ## print("is collision:", self.collision)
-        elif self.collision == True:
-            ## print("stand")
+        elif self.collision:
             self.status = 'stand'
-            ## print("icy stairs", self.icy_y, self.stair_top)
             self.collision = False
         elif not self.is_jumping:
             if self.icy_y + ICY_LENGTH < SCREEN_LENGTH_Y and not self.icy_on_stair:
                 self.icy_y += 3
                 pygame.time.delay(2)
-                ## print("is collision2:", self.collision)
-            if  self.icy_on_stair:
+            if self.icy_on_stair:
                 self.icy_y += 0.1
-                ## print("on stair", self.icy_y)
                 if self.icy_y + ICY_LENGTH == SCREEN_LENGTH_Y:
-                    self.failed = True
                     self.icy_on_stair = False
             else:
                 self.status = 'stand'
-        #if self.icy_on_stair:
-         #   self.icy_y = self.stair_top
-
-
-#(self.icy_y + ICY_LENGTH < 650) and (screen_stones.stair_x< self.icy_x < screen_stones.stair_x+screen_stones.stair_length)
-#self.icy_y + ICY_LENGTH < SCREEN_LENGTH_Y or self.icy_y + ICY_LENGTH < 650

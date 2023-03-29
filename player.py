@@ -22,29 +22,31 @@ class Player:
         self.y_start = self.icy_y
 
         self.rect_icy = self.icy_stand_scale.get_rect()
-        self.collision = False
 
         self.icy_on_stair = False
         self.stair_top = 0
+
+    @property
+    def is_icy_max_y(self):
+        return self.y_start - 300 > self.icy_y
+
+    @property
+    def is_icy_on_floor(self):
+        return self.icy_y + ICY_LENGTH >= SCREEN_LENGTH_Y  # and not self.icy_on_stair
 
     def check_screen_stones(self, screen_stones):
         screen_stones_rect = screen_stones.rect_stair
         if not self.is_jumping:  # max height, going down
             if self.rect_icy.colliderect(screen_stones_rect):
+                pygame.draw.rect(SCREEN, (0, 255, 0), self.rect_icy, 3)
+                pygame.draw.rect(SCREEN, (0, 255, 0), screen_stones_rect, 3)
+                print('button:', self.rect_icy.bottom, 'to:', screen_stones_rect.top + 5)
                 if self.rect_icy.bottom <= screen_stones_rect.top + 5:
-                    self.collision = True
                     self.stair_top = screen_stones_rect.top
                     self.icy_on_stair = True
                     # TODO: to remove
                     pygame.draw.rect(SCREEN, (255, 0, 0), self.rect_icy, 3)
                     pygame.draw.rect(SCREEN, (255, 0, 0), screen_stones_rect, 3)
-                    print('collision', self.collision)
-                    print('icy x:', icy_x, ICY_WIDTH + icy_x)
-                    print('stair x:', screen_stones_rect[0], screen_stones_rect[0] + screen_stones_rect[2])
-            else:
-                print('collision', self.collision)
-                print('icy x:', icy_x, ICY_WIDTH + icy_x)
-                self.collision = False
 
     def icy_display(self):
         if self.status == 'stand':
@@ -74,30 +76,34 @@ class Player:
         elif self.icy_x < 0:
             self.icy_x = 0
 
+    def icy_up(self, speed):
+        self.icy_y -= speed
+
+    def icy_down(self, speed):
+        self.icy_y += speed
+
     def icy_jumping(self, up_key_pressed):
         if up_key_pressed:
             self.status = 'jump'
             self.is_jumping = True
             self.icy_on_stair = False
-            self.collision = False
             self.y_start = self.icy_y
 
         if self.is_jumping:
-            if self.y_start - 300 < self.icy_y:
-                self.icy_y -= 3
-                pygame.time.delay(2)
-            else:
+            if self.is_icy_max_y:
                 self.is_jumping = False
-        elif self.collision:
-            self.status = 'stand'
-            self.collision = False
-        elif not self.is_jumping:
-            if self.icy_y + ICY_LENGTH < SCREEN_LENGTH_Y and not self.icy_on_stair:
-                self.icy_y += 3
+            else:
+                self.icy_up(3)
                 pygame.time.delay(2)
-            if self.icy_on_stair:
-                self.icy_y += 0.1
-                if self.icy_y + ICY_LENGTH == SCREEN_LENGTH_Y:
-                    self.icy_on_stair = False
+        elif self.icy_on_stair:
+            self.status = 'stand'
+            self.icy_down(0.1)
+            if self.is_icy_on_floor:
+                self.icy_on_stair = False
+        else:
+            if not self.is_icy_on_floor:
+                self.icy_down(3)
+                pygame.time.delay(2)
             else:
                 self.status = 'stand'
+

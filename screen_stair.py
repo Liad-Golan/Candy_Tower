@@ -1,10 +1,10 @@
 import pygame
-from Constans import *
+from constants import *
 clock = pygame.time.Clock
 from player import *
 import random
 
-class Screen_stones():
+class ScreenStair():
     def __init__(self, stair_id, stair_y):
         self.min_length = 200
         self.max_length = 700
@@ -38,6 +38,7 @@ class Screen_stones():
             self.stair_y += 0.1
         else:
             self.stair_y = -140
+            self.stair_id += 4
             return True
 
     def get_stair(self):

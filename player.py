@@ -1,4 +1,4 @@
-from Constans import *
+from constants import *
 
 clock = pygame.time.Clock
 
@@ -26,6 +26,9 @@ class Player:
         self.icy_on_stair = None
         self.stair_top = 0
 
+        self.set_stairs = set()
+        self.points = 0
+
     @property
     def is_icy_max_y(self):
         return self.y_start - 300 > self.icy_y
@@ -46,11 +49,16 @@ class Player:
                 if self.rect_icy.bottom <= screen_stones_rect.top + 5:
                     self.stair_top = screen_stones_rect.top
                     self.icy_on_stair = screen_stair.stair_id
+                    self.set_stairs.add(screen_stair.stair_id)
+                    self.points = len(self.set_stairs) * 10
+
                     # TODO: to remove
                     pygame.draw.rect(SCREEN, (255, 0, 0), self.rect_icy, 3)
                     pygame.draw.rect(SCREEN, (255, 0, 0), screen_stones_rect, 3)
             else:
                 self.icy_on_stair = None
+
+
 
     def icy_display(self):
         if self.status == 'stand':

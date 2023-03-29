@@ -1,10 +1,18 @@
 import pygame
-from Constans import *
-from player import *
-from my_buttons import *
-from Button import *
-from screen_stairs import *
 
+import player
+from constants import *
+from player import *
+from buttons import *
+from Button import *
+from screen_stair import *
+
+
+def display_points(icy):
+    font = pygame.font.SysFont(None, 60)
+    print(icy.points)
+    img = font.render(('Points: ' + str(icy.points)), True, (0, 0, 0))
+    SCREEN.blit(img, (20, 20))
 
 def main():
     pygame.init()
@@ -31,10 +39,10 @@ def main():
     need_random3 = [0, 0]
     need_random4 = [0, 0]
 
-    stair1 = Screen_stones(1, 600)
-    stair2 = Screen_stones(2, 450)  # גבהים 200 ו500 לא עבודים
-    stair3 = Screen_stones(3, 300)  # אההההההה....!!!!!
-    stair4 = Screen_stones(4, 150)
+    stair1 = ScreenStair(1, 600)
+    stair2 = ScreenStair(2, 450)  # גבהים 200 ו500 לא עבודים
+    stair3 = ScreenStair(3, 300)  # אההההההה....!!!!!
+    stair4 = ScreenStair(4, 150)
     status = 'stand'
 
     while running:
@@ -64,6 +72,7 @@ def main():
             need_random2 = stair2.display_stair(need_random2)
             need_random3 = stair3.display_stair(need_random3)
             need_random4 = stair4.display_stair(need_random4)
+
             icy.icy_move(keys)  # support move functionality
             icy.icy_display()  # figure on screen
             icy.icy_jumping(up_key_pressed)  # support jump functionality
@@ -81,6 +90,8 @@ def main():
                 need_random3 = [0, 0]
             elif stair4.stair_movment():
                 need_random4 = [0, 0]
+
+            display_points(icy)
 
         pygame.display.flip()
         # if keys[pygame.K_UP]:

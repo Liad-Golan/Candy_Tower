@@ -7,13 +7,11 @@
     <list default="true" id="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Constans.py" beforeDir="false" afterPath="$PROJECT_DIR$/Constans.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Screen_stones.py" beforeDir="false" afterPath="$PROJECT_DIR$/screen_stones.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screen_stones.py" beforeDir="false" afterPath="$PROJECT_DIR$/screen_stones.py" afterDir="false" />
     </list>
-    <list id="991cc9be-77d2-42fd-86c7-383bdf5bdade" name="Changes by orraz" comment="">
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
-    </list>
+    <list id="991cc9be-77d2-42fd-86c7-383bdf5bdade" name="Changes by orraz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,18 +26,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/player.py">
-      <ranges>
-        <range start1="3" end1="3" start2="3" end2="4" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
-        <range start1="9" end1="10" start2="10" end2="11" changelist="991cc9be-77d2-42fd-86c7-383bdf5bdade" />
-        <range start1="18" end1="19" start2="19" end2="20" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
-        <range start1="25" end1="27" start2="26" end2="34" changelist="991cc9be-77d2-42fd-86c7-383bdf5bdade" />
-        <range start1="39" end1="39" start2="46" end2="47" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
-        <range start1="73" end1="74" start2="81" end2="83" changelist="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="2MumanKlvbdVgUHONMOGms3up27" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -103,5 +89,24 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/player.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="self.collision" />
+      </configuration>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/player.py" line="34">
+        <watch expression="self.collision" />
+      </inline-watch>
+    </watches-manager>
   </component>
 </project>

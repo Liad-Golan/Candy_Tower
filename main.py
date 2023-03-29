@@ -3,7 +3,7 @@ from Constans import *
 from player import *
 from my_buttons import *
 from Button import *
-from screen_stones import *
+from screen_stairs import *
 
 
 def main():
@@ -31,10 +31,10 @@ def main():
     need_random3 = [0, 0]
     need_random4 = [0, 0]
 
-    stair1 = Screen_stones(600)
-    stair2 = Screen_stones(450)  # גבהים 200 ו500 לא עבודים
-    stair3 = Screen_stones(300)  # אההההההה....!!!!!
-    stair4 = Screen_stones(150)
+    stair1 = Screen_stones(1, 600)
+    stair2 = Screen_stones(2, 450)  # גבהים 200 ו500 לא עבודים
+    stair3 = Screen_stones(3, 300)  # אההההההה....!!!!!
+    stair4 = Screen_stones(4, 150)
     status = 'stand'
 
     while running:

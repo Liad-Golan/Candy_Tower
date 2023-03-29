@@ -5,12 +5,14 @@ from player import *
 import random
 
 class Screen_stones():
-    def __init__(self, stair_y):
+    def __init__(self, stair_id, stair_y):
         self.min_length = 200
         self.max_length = 700
         self.stair = pygame.image.load("image/stair.png")
 
         self.stair_y = stair_y #זמנית
+
+        self.stair_id = stair_id
 
     def display_stair(self, stair_info):
         if stair_info[0] == 0:
@@ -38,5 +40,5 @@ class Screen_stones():
             self.stair_y = -140
             return True
 
-    def get_stair(selfself):
+    def get_stair(self):
         return self.stair

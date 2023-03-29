@@ -23,7 +23,7 @@ class Player:
 
         self.rect_icy = self.icy_stand_scale.get_rect()
 
-        self.icy_on_stair = False
+        self.icy_on_stair = None
         self.stair_top = 0
 
     @property
@@ -34,18 +34,23 @@ class Player:
     def is_icy_on_floor(self):
         return self.icy_y + ICY_LENGTH >= SCREEN_LENGTH_Y  # and not self.icy_on_stair
 
-    def check_screen_stones(self, screen_stones):
-        screen_stones_rect = screen_stones.rect_stair
-        if not self.is_jumping:  # max height, going down
+    def is_check_needed(self, screen_stair):
+        return not self.is_jumping and (self.icy_on_stair == screen_stair.stair_id or self.icy_on_stair is None)
+
+    def check_screen_stones(self, screen_stair):
+        screen_stones_rect = screen_stair.rect_stair
+        if self.is_check_needed(screen_stair):  # max height, going down
             if self.rect_icy.colliderect(screen_stones_rect):
                 pygame.draw.rect(SCREEN, (0, 255, 0), self.rect_icy, 3)
                 pygame.draw.rect(SCREEN, (0, 255, 0), screen_stones_rect, 3)
                 if self.rect_icy.bottom <= screen_stones_rect.top + 5:
                     self.stair_top = screen_stones_rect.top
-                    self.icy_on_stair = True
+                    self.icy_on_stair = screen_stair.stair_id
                     # TODO: to remove
                     pygame.draw.rect(SCREEN, (255, 0, 0), self.rect_icy, 3)
                     pygame.draw.rect(SCREEN, (255, 0, 0), screen_stones_rect, 3)
+            else:
+                self.icy_on_stair = None
 
     def icy_display(self):
         if self.status == 'stand':
@@ -85,7 +90,7 @@ class Player:
         if up_key_pressed:
             self.status = 'jump'
             self.is_jumping = True
-            self.icy_on_stair = False
+            self.icy_on_stair = None
             self.y_start = self.icy_y
 
         if self.is_jumping:
@@ -94,11 +99,11 @@ class Player:
             else:
                 self.icy_up(3)
                 pygame.time.delay(2)
-        elif self.icy_on_stair:
+        elif self.icy_on_stair is not None:
             self.status = 'stand'
             self.icy_down(0.1)
             if self.is_icy_on_floor:
-                self.icy_on_stair = False
+                self.icy_on_stair = None
         else:
             if not self.is_icy_on_floor:
                 self.icy_down(3)

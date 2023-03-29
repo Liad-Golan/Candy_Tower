@@ -10,8 +10,13 @@ from screen_stair import *
 
 def display_points(icy):
     font = pygame.font.SysFont('snap itc', 60)
-    img = font.render(('Points: ' + str(icy.points)), True, (255,0,150))
+    img = font.render(('Points: ' + str(icy.points)), True, (255, 0, 150))
     SCREEN.blit(img, (20, 20))
+
+def display_restart(icy):
+    font = pygame.font.SysFont('snap itc', 60)
+    img = font.render('To start over press ENTER', True, (50, 0, 150))
+    SCREEN.blit(img, (30, 600))
 
 def main():
     pygame.init()
@@ -100,6 +105,10 @@ def main():
         if screenNumber == 3:
             SCREEN.blit(end_background, (0, 0))
             display_points(icy)
+            display_restart(icy)
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
+                screenNumber = 1
+                icy = Player(PLAYER1_IMAGES)
 
         pygame.display.flip()
         # if keys[pygame.K_UP]:

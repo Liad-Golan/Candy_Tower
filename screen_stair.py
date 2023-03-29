@@ -28,14 +28,14 @@ class ScreenStair():
         self.rect_stair = stair_scale.get_rect()
         self.rect_stair[0] = self.stair_x
         self.rect_stair[1] = self.stair_y#self.stair_y
-        pygame.draw.rect(SCREEN, (0, 0, 0), self.rect_stair, 3)
+        # pygame.draw.rect(SCREEN, (0, 0, 0), self.rect_stair, 3)
 
         return [self.stair_length, self.stair_x]
 
 
     def stair_movment(self):
         if self.stair_y < SCREEN_LENGTH_Y:
-            self.stair_y += 0.1
+            self.stair_y += SPEED_DOWN
         else:
             self.stair_y = -140
             self.stair_id += 4

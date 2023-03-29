@@ -21,5 +21,6 @@ icy_x = 500
 icy_y = SCREEN_LENGTH_Y
 
 WALK_SPEED = 1.3
+SPEED_DOWN = 0.3
 
 FPS = 60

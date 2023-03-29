@@ -45,8 +45,8 @@ class Player:
         screen_stones_rect = screen_stair.rect_stair
         if self.is_check_needed(screen_stair):  # max height, going down
             if self.rect_icy.colliderect(screen_stones_rect):
-                pygame.draw.rect(SCREEN, (0, 255, 0), self.rect_icy, 3)
-                pygame.draw.rect(SCREEN, (0, 255, 0), screen_stones_rect, 3)
+                # pygame.draw.rect(SCREEN, (0, 255, 0), self.rect_icy, 3)
+                # pygame.draw.rect(SCREEN, (0, 255, 0), screen_stones_rect, 3)
                 if self.rect_icy.bottom <= screen_stones_rect.top + 5:
                     self.stair_top = screen_stones_rect.top
                     self.icy_on_stair = screen_stair.stair_id
@@ -54,8 +54,8 @@ class Player:
                     self.points = len(self.set_stairs) * 10
 
                     # TODO: to remove
-                    pygame.draw.rect(SCREEN, (255, 0, 0), self.rect_icy, 3)
-                    pygame.draw.rect(SCREEN, (255, 0, 0), screen_stones_rect, 3)
+                    # pygame.draw.rect(SCREEN, (255, 0, 0), self.rect_icy, 3)
+                    # pygame.draw.rect(SCREEN, (255, 0, 0), screen_stones_rect, 3)
             else:
                 self.icy_on_stair = None
 
@@ -74,7 +74,7 @@ class Player:
 
         self.rect_icy[0] = self.icy_x
         self.rect_icy[1] = self.icy_y
-        pygame.draw.rect(SCREEN, (0, 0, 0), self.rect_icy, 3)
+        # pygame.draw.rect(SCREEN, (0, 0, 0), self.rect_icy, 3)
 
     def icy_move(self, keys):
         if keys[pygame.K_RIGHT]:
@@ -110,7 +110,7 @@ class Player:
                 pygame.time.delay(2)
         elif self.icy_on_stair is not None:
             self.status = 'stand'
-            self.icy_down(0.1)
+            self.icy_down(SPEED_DOWN)
             if self.is_icy_on_floor:
                 self.icy_on_stair = None
                 self.is_fail = True

@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" name="Changes" comment="start over functionality">
+    <list default="true" id="30bc8e4f-dfbe-422e-94a4-4172f7e8f13c" name="Changes" comment="start background fix and music to add">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AdditionalFiles/CandyTower Presentation.pptm" beforeDir="false" afterPath="$PROJECT_DIR$/AdditionalFiles/CandyTower Presentation.pptm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screen_stair.py" beforeDir="false" afterPath="$PROJECT_DIR$/screen_stair.py" afterDir="false" />
     </list>
     <list id="991cc9be-77d2-42fd-86c7-383bdf5bdade" name="Changes by orraz" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +133,13 @@
       <option name="presentableId" value="LOCAL‎00010" />
       <updated>1680119949561</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL‎00011" summary="start background fix and music to add">
+      <created>1680125770625</created>
+      <option name="number" value="LOCAL‎00011" />
+      <option name="presentableId" value="LOCAL‎00011" />
+      <updated>1680125770625</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,7 +165,8 @@
     <MESSAGE value="update start game icon" />
     <MESSAGE value="add png files" />
     <MESSAGE value="start over functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="start over functionality" />
+    <MESSAGE value="start background fix and music to add" />
+    <option name="LAST_COMMIT_MESSAGE" value="start background fix and music to add" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

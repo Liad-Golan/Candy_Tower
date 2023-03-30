@@ -108,8 +108,15 @@ def main():
             display_points(icy)
             display_restart(icy)
             if event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN:
-                screenNumber = 1
                 icy = Player(PLAYER1_IMAGES)
+                icy.is_fail = False
+                print(icy.is_fail)
+                stair1 = ScreenStair(1, 600)
+                stair2 = ScreenStair(2, 394)  # גבהים 200 ו500 לא עבודים
+                stair3 = ScreenStair(3, 188)  # אההההההה....!!!!!
+                stair4 = ScreenStair(4, -18)
+                screenNumber = 1
+
 
         pygame.display.flip()
         # if keys[pygame.K_UP]:
